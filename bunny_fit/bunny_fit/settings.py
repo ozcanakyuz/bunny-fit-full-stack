@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     #? MY APPS
     'home',
+    'active_link',
 ]
 
 MIDDLEWARE = [
