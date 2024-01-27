@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %} {{ page }} {% endblock %}</title>
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="{% block keywords %} {{setting.keywords}} {% endblock %}" name="keywords">
+    <meta content="{% block description %} {{setting.description}} {% endblock %}" name="description">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+
+    <!--google font link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap"
+    rel="stylesheet">
+
+    <!--preload images-->
+    <link rel="preload" as="image" href="{% static 'images/hero-banner.png' %}">
+    <link rel="preload" as="image" href="{% static 'images/hero-circle-one.png' %}">
+    <link rel="preload" as="image" href="{% static 'images/hero-circle-two.png' %}">
+    <link rel="preload" as="image" href="{% static 'images/heart-rate.svg' %}"
+    <link rel="preload" as="image" href="{% static 'images/calories.svg' %}">
+
+    {% block head %} {% endblock %}
+</head>
+<body id="top">
+    {% include 'navbar.html' %}
+    {% block body %} {% endblock %}
+    {% include 'footer.html' %}
+    {% block foot %} {% endblock %}
+</body>
+</html>
