@@ -4,20 +4,17 @@
 <!--#FOOTER-->
 <footer class="footer">
 
-<div class="section footer-top bg-dark has-bg-image" style="background-image: url('./assets/images/footer-bg.png')">
+<div class="section footer-top bg-dark has-bg-image" style="background-image: url('{% static 'images/footer-bg.png' %}')">
     <div class="container">
 
     <div class="footer-brand">
 
-        <a href="#" class="logo">
-        <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
-
-        <span class="span">Fitlife</span>
+        <a href="/" class="logo" style="margin-bottom:7rem;">
+            <img src="{% static "images/header.png" %}" alt="">
         </a>
+        <h1>BUNNY FIT</h1>
 
-        <p class="footer-brand-text">
-        Etiam suscipit fringilla ullamcorper sed malesuada urna nec odio.
-        </p>
+        
 
         <div class="wrapper">
             <div class="d-flex g-3 flex-direction-column" id="clock">
@@ -43,7 +40,6 @@
     </div>
 
     <ul class="footer-list">
-
         <li>
         <p class="footer-list-title has-before">Our Links</p>
         </li>
@@ -67,11 +63,9 @@
         <li>
         <a href="#" class="footer-link">Contact Us</a>
         </li>
-
     </ul>
 
     <ul class="footer-list">
-
         <li>
         <p class="footer-list-title has-before">Contact Us</p>
         </li>
@@ -113,7 +107,6 @@
     </ul>
 
     <ul class="footer-list">
-
         <li>
         <p class="footer-list-title has-before">Our Newsletter</p>
         </li>
@@ -154,7 +147,6 @@
         </li>
 
     </ul>
-
     </div>
 </div>
 
@@ -164,7 +156,7 @@
     <p class="mb-md-0 text-center text-md-left text-secondary">
         &copy; All Rights Reserved. Designed
         by
-        <a class="text-primary" href="https://instagram.com/ozcanakyuz_" target="_blank">Ozcan AKYUZ</a>
+        <a class="text-primary" style="color: var(--coquelicot);" href="https://instagram.com/ozcanakyuz_" target="_blank">Ozcan AKYUZ</a>
     </p>
 
 
@@ -200,3 +192,4 @@
 
 <!-- Template Javascript -->
 <script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>

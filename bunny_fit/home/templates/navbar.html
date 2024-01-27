@@ -1,13 +1,15 @@
 {% load static %}
+{% load active_link_tags %}
 
+{% block head %}
 <!--#HEADER-->
 <header class="header" data-header>
 <div class="container">
 
-    <a href="#" class="logo">
-    <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
-
-    <span class="span">Fitlife</span>
+    <a href="/" class="logo">
+    {% comment %} <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon> {% endcomment %}
+    <img src="{% static "images/header.png" %}" alt="header">
+    {% comment %} <span class="span">Bunny Fit</span> {% endcomment %}
     </a>
 
     <nav class="navbar" data-navbar>
@@ -16,18 +18,19 @@
         <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
     </button>
 
+    
+    {% with request.resolver_match.url_name as url_name %}
     <ul class="navbar-list">
-
         <li>
-        <a href="#home" class="navbar-link active" data-nav-link>Home</a>
+        <a href="/" class="navbar-link {% if url_name == 'index' %} active {% endif %}" data-nav-link>Anasayfa</a>
         </li>
 
         <li>
-        <a href="#about" class="navbar-link" data-nav-link>About Us</a>
+        <a href="#about" class="navbar-link" data-nav-link>Hakkımızda</a>
         </li>
 
         <li>
-        <a href="#class" class="navbar-link" data-nav-link>Classes</a>
+        <a href="#class" class="navbar-link" data-nav-link>Dersler</a>
         </li>
 
         <li>
@@ -35,14 +38,17 @@
         </li>
 
         <li>
-        <a href="#" class="navbar-link" data-nav-link>Contact Us</a>
+        <a href="#" class="navbar-link" data-nav-link>İletişim</a>
         </li>
-
     </ul>
+    {% endwith %}
 
     </nav>
 
-    <a href="#" class="btn btn-secondary">Join Now</a>
+    {% comment %} <a href="/login" class="btn btn-secondary">Giriş Yap</a> {% endcomment %}
+
+    {% comment %} !MODAL {% endcomment %}
+    <a class="btn btn-secondary d-flex align-items-center hidden-arrow btnnavbar" href="#" id="navbarDropdownMenuAvatar" type="button" data-toggle="modal" data-target="#containerlog">Giriş Yap</a>
 
     <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
     <span class="line"></span>
@@ -52,3 +58,7 @@
 
 </div>
 </header>
+
+{% include 'login.html' %}
+{% endblock %}
+
