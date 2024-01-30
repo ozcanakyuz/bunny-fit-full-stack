@@ -47,6 +47,3 @@ def index(request):
     #                'page_obj': page_obj,
     #                'page': 'Home',} 
     #     return render(request, 'index.html', context)
-
-def login(request):
-    return render(request, 'login.html', {'page': 'Log In'})

@@ -41,7 +41,9 @@ INSTALLED_APPS = [
 
     #? MY APPS
     'home',
+    'user',
     'active_link',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -125,6 +127,7 @@ STATIC_URL = 'static/'
 #? upload
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+
 
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
 
