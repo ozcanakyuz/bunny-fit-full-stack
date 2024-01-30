@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+{% comment %} <!-- Header -->
+<header>
+    <div class="header m-auto">
+        <div class="container" style="position: relative;">
+            <h2 class="text-light px-2 m-auto border-bottom" id="navbar-text">USER PROFILE</h2>
+        </div>
+    </div>
+</header>
+<!-- Header --> {% endcomment %}
+
+    <!--#HERO-->
+    <section class="section hero bg-dark has-after has-bg-image" id="home" aria-label="hero" data-section
+      style="background-image: url('{% static 'images/hero-bg.png' %}'); height: 65vh;">
+      <div class="container">
+  
+        <div class="hero-content" style="margin-block-end: 190px;">
+  
+          <h1 class="h1 hero-title">KULLANICI PROFILI</h1>
+          <p class="hero-subtitle">
+            <strong class="strong">MORE FIT</strong>MORE HAPPY!
+          </p>
+
+          <h1 class="h1 hero-title">BUNNY FIT</h1>
+          {% comment %} <p class="section-text">
+            Duis mollis felis quis libero dictum vehicula. Duis dictum lorem mi, a faucibus nisi eleifend eu.
+          </p> {% endcomment %}
+        </div>
+  
+        <div class="hero-banner">
+          <img src="{% static 'images/bunnyfit.png' %}" width="660" height="753" alt="hero banner" class="w-100">
+          <img src="{% static 'images/hero-circle-one.png' %}" width="666" height="666" aria-hidden="true" alt=""
+            class="circle circle-1">
+          <img src="{% static 'images/hero-circle-two.png' %}" width="666" height="666" aria-hidden="true" alt=""
+            class="circle circle-2">
+          <img src="{% static 'images/heart-rate.svg' %}" width="255" height="270" alt="heart rate"
+            class="abs-img abs-img-1">
+          <img src="{% static 'images/calories.svg' %}" width="348" height="224" alt="calories" class="abs-img abs-img-2">
+        </div>
+      </div>
+    </section>
+
+<table class="table table-bordered text-center rounded shadow-lg mt-5 w-75" id="user_profile" style="margin: auto;">
+    <thead class="bg-secondary text-dark">
+        <tr>
+            <th class="user_profile_responsive_600">Profile Photo</th>
+            <th class="user_profile_responsive_600">Name</th>
+            <th class="user_profile_responsive_600">E Mail</th>
+            <th class="user_profile_responsive">Phone</th>
+            <th class="user_profile_responsive">Address</th>
+            <th class="user_profile_responsive">City</th>
+            <th class="user_profile_responsive_600">Process</th>
+        </tr>
+    </thead>
+    <tbody class="align-middle">
+        <tr>
+            {% if profile.image %}
+            <td class="align-middle"><img src="{{ profile.image.url }}" alt="profil" style="width: 100px;"></td>
+            {% else %}
+            <td class="align-middle"><img src="" alt="NO PHOTO!" style="width: 100px;"></td>
+            {% endif %}
+            <td class="align-middle user_profile_responsive_600">{{ profile.user.get_full_name }}</td>
+            <td class="align-middle user_profile_responsive_600">{{ profile.user.email }}</td>
+            <td class="align-middle user_profile_responsive">{{ profile.phone }}</td>
+            <td class="align-middle user_profile_responsive">{{ profile.address }}</td>
+            <td class="align-middle user_profile_responsive">{{ profile.city }}</td>
+            <td class="align-middle">
+                <a class="btn btn-primary rounded px-4 py-2 rounded text-light align-items-center hidden-arrow" id="navbarDropdownEditProfile" type="button" data-toggle="modal" data-target="#containereditprofile">Edit Profile</a>
+                <hr>
+                <a class="btn btn-danger rounded px-3 py-2 rounded text-light align-items-center hidden-arrow" id="navbarDropdownChangePassword" type="button" data-toggle="modal" data-target="#containerchangepassword">Change Password</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="text-center my-4">
+
+  </div>
+{% comment %} 
+  {% include 'user_settings_modal.html' %}
+  {% include 'user_password_modal.html' %} {% endcomment %}
+
+{% endblock %}

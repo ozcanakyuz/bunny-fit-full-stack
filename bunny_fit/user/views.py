@@ -38,6 +38,6 @@ def index(request):
         context = {'profile': profile,
                    'user_form': user_form,
                    'profile_form': profile_form,
-                    'password_form': password_form,
+                   'password_form': password_form,
                    'page': 'USER PROFILE',}
         return render(request, 'user_profile.html', context)
