@@ -5,10 +5,11 @@ from django.shortcuts import render
 
 
 from home.forms import LoginForm, SignUpForm
-from home.models import UserProfile
+from home.models import Antrenor, UserProfile
 
 #! LOG IN & SIGN-UP
 def index(request):
+        antrenorler = Antrenor.objects.order_by('?')[:8]
         if request.method == 'POST': #?check post
             login_form = LoginForm(request.POST)
             signup_form = SignUpForm(request.POST)
@@ -47,7 +48,9 @@ def index(request):
                             'signup_form': signup_form,
                             'page': 'Bunny Fit',} 
                 return render(request, 'index.html', context)
-        return render(request, 'index.html', {'page': 'Bunny Fit'})
+        context = {'page': 'Bunny Fit',
+                       'antrenorler': antrenorler,} 
+        return render(request, 'index.html', context)
 
 #! LOG OUT
 def logout_view(request):

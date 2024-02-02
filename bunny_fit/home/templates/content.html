@@ -80,111 +80,77 @@
     <section class="section class bg-dark has-bg-image" id="class" aria-label="class"
       style="background-image: url('{% static 'images/classes-bg.png' %}')">
       <div class="container">
-  
         <p class="section-subtitle">DERSLERIMIZ</p>
-  
         <h2 class="h2 section-title text-center">Her Hedefe Uygun Fitness Dersleri</h2>
-  
         <ul class="class-list has-scrollbar">
-  
           <li class="scrollbar-item">
             <div class="class-card">
-  
               <figure class="card-banner img-holder" style="--width: 416; --height: 240;">
                 <img src="{% static 'images/class-1.jpg' %}" width="416" height="240" loading="lazy" alt="Weight Lifting"
                   class="img-cover">
               </figure>
-  
               <div class="card-content">
-  
                 <div class="title-wrapper">
                   <img src="{% static 'images/class-icon-1.png' %}" width="52" height="52" aria-hidden="true" alt=""
                     class="title-icon">
-  
                   <h3 class="h3">
                     <a href="#" class="card-title">Weight Lifting</a>
                   </h3>
                 </div>
-  
                 <p class="card-text">
                   Suspendisse nisi libero, cursus ac magna sit amet, fermentum imperdiet nisi.
                 </p>
-  
                 <div class="card-progress">
-  
                   <div class="progress-wrapper">
                     <p class="progress-label">Doluluk Oranı</p>
-  
                     <span class="progress-value">95%</span>
                   </div>
-  
                   <div class="progress-bg">
                     <div class="progress-bar" style="width: 95%"></div>
                   </div>
-  
                 </div>
-  
               </div>
-  
             </div>
           </li>
-  
           <li class="scrollbar-item">
             <div class="class-card">
-  
               <figure class="card-banner img-holder" style="--width: 416; --height: 240;">
                 <img src="{% static 'images/class-2.jpg' %}" width="416" height="240" loading="lazy" alt="Cardio & Strenght"
                   class="img-cover">
               </figure>
-  
               <div class="card-content">
-  
                 <div class="title-wrapper">
                   <img src="{% static 'images/class-icon-2.png' %}" width="52" height="52" aria-hidden="true" alt=""
                     class="title-icon">
-  
                   <h3 class="h3">
                     <a href="#" class="card-title">Cardio & Strenght</a>
                   </h3>
                 </div>
-  
                 <p class="card-text">
                   Suspendisse nisi libero, cursus ac magna sit amet, fermentum imperdiet nisi.
                 </p>
-  
                 <div class="card-progress">
-  
                   <div class="progress-wrapper">
                     <p class="progress-label">Doluluk Oranı</p>
-  
                     <span class="progress-value">92%</span>
                   </div>
-  
                   <div class="progress-bg">
                     <div class="progress-bar" style="width: 92%"></div>
                   </div>
-  
                 </div>
-  
               </div>
-  
             </div>
           </li>
-  
           <li class="scrollbar-item">
             <div class="class-card">
-  
               <figure class="card-banner img-holder" style="--width: 416; --height: 240;">
                 <img src="{% static 'images/class-3.jpg' %}" width="416" height="240" loading="lazy" alt="Power Yoga"
                   class="img-cover">
               </figure>
-  
               <div class="card-content">
-  
                 <div class="title-wrapper">
                   <img src="{% static 'images/class-icon-3.png' %}" width="52" height="52" aria-hidden="true" alt=""
                     class="title-icon">
-  
                   <h3 class="h3">
                     <a href="#" class="card-title">Power Yoga</a>
                   </h3>
@@ -346,34 +312,34 @@
     <!--============================== ANTRENORLERIMIZ ===============================-->
     <section class="section blog" id="blog" aria-label="blog">
     <div class="container">
-      <p class="section-subtitle">ANTRENÖRLERİMİZ</p>
-      <h2 class="h2 section-title text-center">Her Hedefe Uygun Fitness Dersleri</h2>
+      <p class="section-subtitle mb-5">ANTRENÖRLERİMİZ</p>
       <ul class="class-list has-scrollbar">
-        <li class="scrollbar-item">
-          <div class="class-card">
-            <figure class="card-banner img-holder" style="--width: 416; --height: 240;">
-              <img src="{% static 'images/class-1.jpg' %}" width="416" height="240" loading="lazy" alt="Weight Lifting"
-                class="img-cover">
-            </figure>
-            <div class="card-content">
-              <div class="title-wrapper">
-                <img src="{% static 'images/class-icon-1.png' %}" width="52" height="52" aria-hidden="true" alt=""
-                  class="title-icon">
-                <h3 class="h3">
-                  <a href="#" class="card-title">Weight Lifting</a>
-                </h3>
-              </div>
-              <p class="card-text">
-                Suspendisse nisi libero, cursus ac magna sit amet, fermentum imperdiet nisi.
-              </p>
-              <div class="card-progress">
-                <div class="progress-bg">
-                  <div class="progress-bar"></div>
+        {% for antrenor in antrenorler %}
+          <li class="scrollbar-item">
+            <div class="class-card">
+              <figure class="card-banner img-holder" style="--width: 400; --height: 400;">
+                <img src={{ antrenor.image.url }} width="416" height="240" loading="lazy" alt="Weight Lifting"
+                  class="img-cover">
+              </figure>
+              <div class="card-content">
+                <div class="title-wrapper">
+                  <img src="{% static 'images/class-icon-1.png' %}" width="52" height="52" aria-hidden="true" alt=""
+                    class="title-icon">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">{{ antrenor.name }}</a>
+                    <p class="card-text">{{ antrenor.keywords }}</p>
+                  </h3>
+                </div>
+                <p class="card-text">{{ antrenor.detail }}</p>
+                <div class="card-progress">
+                  <div class="progress-bg">
+                    <div class="progress-bar"></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </li>
+          </li>
+        {% endfor %}
       </ul>
 
     </div>

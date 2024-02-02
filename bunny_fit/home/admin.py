@@ -11,14 +11,14 @@ class AntrenorImagesInline(admin.TabularInline):
     extra = 5
     readonly_fields = ('image_tag',)
 class AntrenorAdmin(admin.ModelAdmin):
-    # fields = ['title', 'status'] == 
-    list_display = ['title','image_tag']
+    # fields = ['name', 'status'] == 
+    list_display = ['name','keywords','detail','image_tag','status']
     list_filter = ['status']
     readonly_fields = ('image_tag',) 
     inlines = [AntrenorImagesInline]
 admin.site.register(Antrenor, AntrenorAdmin)
 
 class ImagesAdmin(admin.ModelAdmin):
-    # fields = ['title', 'status']
-    list_display = ['title','antrenor', 'image_tag']
+    # fields = ['name', 'status']
+    list_display = ['name','antrenor', 'image_tag']
 admin.site.register(Images, ImagesAdmin)
