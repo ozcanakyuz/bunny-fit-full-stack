@@ -21,25 +21,21 @@
     
     {% with request.resolver_match.url_name as url_name %}
     <ul class="navbar-list">
-        <li>
-        <a href="/" class="navbar-link {% if url_name == 'index' %} active {% endif %}" data-nav-link>Anasayfa</a>
-        </li>
-
-        <li>
-        <a href="#about" class="navbar-link" data-nav-link>Hakkımızda</a>
-        </li>
-
-        <li>
-        <a href="#class" class="navbar-link" data-nav-link>Dersler</a>
-        </li>
-
-        <li>
-        <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-        </li>
-
-        <li>
-        <a href="#" class="navbar-link" data-nav-link>İletişim</a>
-        </li>
+            <li>
+                <a href="/" class="navbar-link {% if url_name == 'index' %} active {% endif %}" data-nav-link>Anasayfa</a>
+            </li>
+            <li>
+                <a href="#about" class="navbar-link {% if url_name == '#about' %} active {% endif %}" data-nav-link>Hakkımızda</a>
+            </li>
+            <li>
+                <a href="#class" class="navbar-link {% if url_name == '#class' %} active  {% endif %}" data-nav-link>Dersler</a>
+            </li>
+            <li>
+                <a href="#blog" class="navbar-link {% if url_name == '#blog' %} active {% endif %}" data-nav-link>Blog</a>
+            </li>
+            <li>
+                <a href="#" class="navbar-link {% if url_name == '#' %} active {% endif %}" data-nav-link>İletişim</a>
+            </li>
     </ul>
     {% endwith %}
 
@@ -47,9 +43,12 @@
 
     {% comment %} <a href="/login" class="btn btn-secondary">Giriş Yap</a> {% endcomment %}
 
-    {% comment %} !MODAL {% endcomment %}
-    <a class="btn btn-secondary d-flex align-items-center hidden-arrow btnnavbar" href="#" id="navbarDropdownMenuAvatar" type="button" data-toggle="modal" data-target="#containerlog">Giriş Yap</a>
-
+    {% comment %} ! LOG-IN SIGN-UP {% endcomment %}
+    {%  if user.id is not None %}
+        <a class="btn btn-secondary d-flex align-items-center hidden-arrow btnnavbar" href="/user" id="navbarDropdownMenuAvatar">{{user.username}}</a>
+    {% else %}
+        <a class="btn btn-secondary d-flex align-items-center hidden-arrow btnnavbar" href="#" id="navbarDropdownMenuAvatar" type="button" data-toggle="modal" data-target="#containerlog">Giriş Yap</a>
+    {% endif %}
     <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
     <span class="line"></span>
     <span class="line"></span>

@@ -44,12 +44,13 @@ def index(request):
                 login_form = LoginForm()
                 signup_form = SignUpForm()
                 context = {'login_form': login_form,
-                        'signup_form': signup_form,
-                        'page': 'Home',} 
+                            'signup_form': signup_form,
+                            'page': 'Bunny Fit',} 
                 return render(request, 'index.html', context)
-        return render(request, 'index.html', {'page': 'Home'})
+        return render(request, 'index.html', {'page': 'Bunny Fit'})
 
 #! LOG OUT
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/')
+

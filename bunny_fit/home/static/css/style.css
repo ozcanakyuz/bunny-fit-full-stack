@@ -1618,7 +1618,7 @@ body {
 
 
 /*! Responsive */
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
   #user_profile .user_profile_responsive {
     display: none;
   }
@@ -1628,7 +1628,7 @@ body {
   #user_profile .user_profile_responsive_600 {
     display: none;
   }
-}
+} */
 
 @media (max-width: 630px) {
   .containerlog {
