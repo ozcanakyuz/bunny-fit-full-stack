@@ -5,43 +5,39 @@
 <!--#HEADER-->
 <header class="header" data-header>
 <div class="container">
-
     <a href="/" class="logo">
     {% comment %} <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon> {% endcomment %}
     <img src="{% static "images/header.png" %}" alt="header">
     {% comment %} <span class="span">Bunny Fit</span> {% endcomment %}
     </a>
-
     <nav class="navbar" data-navbar>
-
     <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
         <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
     </button>
-
-    
     {% with request.resolver_match.url_name as url_name %}
-    <ul class="navbar-list">
+        <ul class="navbar-list">
             <li>
                 <a href="/" class="navbar-link {% if url_name == 'index' %} active {% endif %}" data-nav-link>Anasayfa</a>
             </li>
             <li>
-                <a href="#about" class="navbar-link {% if url_name == '#about' %} active {% endif %}" data-nav-link>Hakkımızda</a>
+                <a href="#about" class="navbar-link {% if url_name == 'about' %} active {% endif %}" data-nav-link>Hakkımızda</a>
             </li>
             <li>
-                <a href="#class" class="navbar-link {% if url_name == '#class' %} active  {% endif %}" data-nav-link>Dersler</a>
+                <a href="#class" class="navbar-link {% if url_name == 'class' %} active  {% endif %}" data-nav-link>Dersler</a>
             </li>
             <li>
-                <a href="#blog" class="navbar-link {% if url_name == '#blog' %} active {% endif %}" data-nav-link>Blog</a>
+                <a href="/fiyatlar" class="navbar-link {% if url_name == 'class' %} active  {% endif %}" data-nav-link>Üyelik Paketleri</a>
             </li>
             <li>
-                <a href="#" class="navbar-link {% if url_name == '#' %} active {% endif %}" data-nav-link>İletişim</a>
+                <a href="#blog" class="navbar-link {% if url_name == 'blog' %} active {% endif %}" data-nav-link>Antrenörler</a>
             </li>
-    </ul>
+            <li>
+                <a href="#contact" class="navbar-link {% if url_name == 'contact' %} active {% endif %}" data-nav-link>İletişim</a>
+            </li>
+        </ul>
+        
     {% endwith %}
-
     </nav>
-
-    {% comment %} <a href="/login" class="btn btn-secondary">Giriş Yap</a> {% endcomment %}
 
     {% comment %} ! LOG-IN SIGN-UP {% endcomment %}
     {%  if user.id is not None %}
@@ -54,9 +50,24 @@
     <span class="line"></span>
     <span class="line"></span>
     </button>
-
 </div>
+    
+{% if messages and user.id is not None %}
+    {% for message in messages %}
+        <div class="alert alert-{{message.tags}} rounded shadow-lg mt-5" role="alert" style="position:absolute; z-index: 1; color: black; opacity: .8; max-width: 40%">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% else %}
+    {% for message in messages %}
+        <div class="alert alert-{{message.tags}} rounded shadow-lg mt-5" role="alert" style="position:absolute; z-index: 1; color: black; opacity: .8; max-width: 40%">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
 </header>
+
+
 
 {% include 'login.html' %}
 {% endblock %}

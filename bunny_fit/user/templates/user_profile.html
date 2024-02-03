@@ -3,16 +3,6 @@
 
 {% block body %}
 
-{% comment %} <!-- Header -->
-<header>
-    <div class="header m-auto">
-        <div class="container" style="position: relative;">
-            <h2 class="text-light px-2 m-auto border-bottom" id="navbar-text">USER PROFILE</h2>
-        </div>
-    </div>
-</header>
-<!-- Header --> {% endcomment %}
-
     <!--#HERO-->
     <section class="section hero bg-dark has-after has-bg-image" id="home" aria-label="hero" data-section
       style="background-image: url('{% static 'images/hero-bg.png' %}'); height: 65vh;">
@@ -119,12 +109,15 @@
 </table>
 <table class="align-middle d-flex justify-content-center mt-4" >
         <tr class="align-middle d-flex justify-content-center mt-4"  style="gap: 2rem;">
-            <td class="align-middle">
-                <a class="btn btn-danger rounded px-4 py-4 rounded text-light align-items-center hidden-arrow" id="navbarDropdownChangePassword" type="button" data-toggle="modal" data-target="#containerchangepassword">Change Password</a>
-            </td>
-            <td>
-                <a class="btn btn-success rounded px-4 py-4 rounded text-light align-items-center hidden-arrow" id="navbarDropdownEditProfile" type="button" data-toggle="modal" data-target="#containereditprofile">Edit Profile</a>
-            </td>
+          <td>
+            <a class="btn btn-danger rounded px-4 py-4 rounded text-light align-items-center hidden-arrow" href="/logout">Log Out</a>
+          </td>
+          <td class="align-middle">
+              <a class="btn btn-warning rounded px-4 py-4 rounded text-light align-items-center hidden-arrow" id="navbarDropdownChangePassword" type="button" data-toggle="modal" data-target="#containerchangepassword">Change Password</a>
+          </td>
+          <td>
+              <a class="btn btn-success rounded px-4 py-4 rounded text-light align-items-center hidden-arrow" id="navbarDropdownEditProfile" type="button" data-toggle="modal" data-target="#containereditprofile">Edit Profile</a>
+          </td>
         </tr>
 </table>
 
