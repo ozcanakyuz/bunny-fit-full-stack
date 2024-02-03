@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 
 from home.forms import LoginForm, SignUpForm
-from home.models import Antrenor, UserProfile
+from home.models import Antrenor, Fiyatlar, UserProfile
 
 #! LOG IN & SIGN-UP
 def index(request):
@@ -59,4 +59,7 @@ def logout_view(request):
 
 # FIYATLAR
 def fiyatlar_view(request):
-    return render(request, 'fiyatlar.html', {'page': 'Üyelik Paketleri'})
+    fiyatlar = Fiyatlar.objects.all()
+    context = {'page': 'Üyelik Paketleri',
+               'fiyatlar': fiyatlar,}
+    return render(request, 'fiyatlar.html', context)

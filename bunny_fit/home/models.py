@@ -91,8 +91,11 @@ class Images(models.Model):
 #! FIYATLAR LISTESI
 class Fiyatlar(models.Model):
     STATUS = (('True', 'Evet'),('False', 'Hayir'),)
-    name = models.CharField(max_length=150)
+    ODEME_SECENEKLERI = (('NAKIT', 'NAKIT'),('KREDI KARTI', 'KREDI KARTI'),)
+    paket = models.CharField(max_length=150)
+    ay = models.CharField(max_length=150)
     price= models.FloatField()
+    odeme_sekli = models.CharField(max_length=20, choices=ODEME_SECENEKLERI)
     detail = models.TextField()
     status = models.CharField(max_length=10,choices=STATUS)
     slug = models.SlugField()
@@ -100,4 +103,4 @@ class Fiyatlar(models.Model):
     update_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return self.paket

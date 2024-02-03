@@ -19,12 +19,10 @@ class AntrenorAdmin(admin.ModelAdmin):
 admin.site.register(Antrenor, AntrenorAdmin)
 
 class ImagesAdmin(admin.ModelAdmin):
-    # fields = ['name', 'status']
     list_display = ['name','antrenor', 'image_tag']
 admin.site.register(Images, ImagesAdmin)
 
 class FiyatlarAdmin(admin.ModelAdmin):
-    # fields = ['name', 'status'] == 
-    list_display = ['name','price','detail','status']
+    list_display = ['paket','ay','odeme_sekli','price','detail','status']
     list_filter = ['status']
 admin.site.register(Fiyatlar, FiyatlarAdmin)
