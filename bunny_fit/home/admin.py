@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from home.models import Antrenor, Images, Setting
+from home.models import Antrenor, Fiyatlar, Images, Setting
 
 
 admin.site.register(Setting)
@@ -22,3 +22,9 @@ class ImagesAdmin(admin.ModelAdmin):
     # fields = ['name', 'status']
     list_display = ['name','antrenor', 'image_tag']
 admin.site.register(Images, ImagesAdmin)
+
+class FiyatlarAdmin(admin.ModelAdmin):
+    # fields = ['name', 'status'] == 
+    list_display = ['name','price','detail','status']
+    list_filter = ['status']
+admin.site.register(Fiyatlar, FiyatlarAdmin)

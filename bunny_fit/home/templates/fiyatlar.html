@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<!--#HERO-->
+<section class="section hero bg-dark has-after has-bg-image" id="home" aria-label="hero" data-section
+  style="background-image: url('{% static 'images/hero-bg.png' %}'); height: 65vh;">
+  <div class="container">
+
+    <div class="hero-content" style="margin-block-end: 190px;">
+
+      <h1 class="h1 hero-title">KULLANICI PROFILI</h1>
+      <p class="hero-subtitle">
+        <strong class="strong">MORE FIT</strong>MORE HAPPY!
+      </p>
+
+      <h1 class="h1 hero-title">BUNNY FIT</h1>
+      {% comment %} <p class="section-text">
+        Duis mollis felis quis libero dictum vehicula. Duis dictum lorem mi, a faucibus nisi eleifend eu.
+      </p> {% endcomment %}
+    </div>
+
+    <div class="hero-banner">
+      <img src="{% static 'images/bunnyfit.png' %}" width="660" height="753" alt="hero banner" class="w-100">
+      <img src="{% static 'images/hero-circle-one.png' %}" width="666" height="666" aria-hidden="true" alt=""
+        class="circle circle-1">
+      <img src="{% static 'images/hero-circle-two.png' %}" width="666" height="666" aria-hidden="true" alt=""
+        class="circle circle-2">
+      <img src="{% static 'images/heart-rate.svg' %}" width="255" height="270" alt="heart rate"
+        class="abs-img abs-img-1">
+      <img src="{% static 'images/calories.svg' %}" width="348" height="224" alt="calories" class="abs-img abs-img-2">
+    </div>
+  </div>
+</section>
+
+
+{% comment %}! PRICE LIST  {% endcomment %}
+<section>
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row d-flex">
+
+          <div class="col-sm-4">
+            <div class="card text-center">
+              <div class="title">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                <h2>SILVER PAKET <br>(1 AYLIK)</h2>
+              </div>
+              <div class="price">
+                <h4>1259₺</h4>
+              </div>
+              <div class="option">
+                <ul>
+                <li> <i class="fa fa-check" aria-hidden="true"></i> Saat 17:00'a kadar giriş hakkı. </li>
+                </ul>
+              </div>
+              {% comment %} <a href="#">Order Now </a> {% endcomment %}
+            </div>
+          </div>
+          <!-- END Col one -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

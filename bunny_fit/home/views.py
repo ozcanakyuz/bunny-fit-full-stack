@@ -49,7 +49,7 @@ def index(request):
                             'page': 'Bunny Fit',} 
                 return render(request, 'index.html', context)
         context = {'page': 'Bunny Fit',
-                       'antrenorler': antrenorler,} 
+                    'antrenorler': antrenorler,} 
         return render(request, 'index.html', context)
 
 #! LOG OUT
@@ -57,3 +57,6 @@ def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/')
 
+# FIYATLAR
+def fiyatlar_view(request):
+    return render(request, 'fiyatlar.html', {'page': 'Üyelik Paketleri'})
