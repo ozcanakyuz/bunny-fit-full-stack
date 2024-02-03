@@ -37,33 +37,31 @@
 
 {% comment %}! PRICE LIST  {% endcomment %}
 <section>
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row d-flex">
-        
-        {% for fiyat in fiyatlar %}
-          <div class="col-sm-4">
-            <div class="card text-center shadow-lg">
-              <div class="title">
-                <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                <h2>{{ fiyat.paket }} <br> {{ fiyat.ay }}</h2>
-              </div>
-              <div class="price">
-                <h4>{{ fiyat.price }}₺ <br><p style="font-size: 3rem;">{{ fiyat.odeme_sekli }}</p></h4>
-              </div>
-              <div class="option">
-                <ul>
-                <li> <i class="fa fa-check" aria-hidden="true"></i> {{ fiyat.detail }} </li>
-                </ul>
-              </div>
-              {% comment %} <a href="#">Order Now </a> {% endcomment %}
+  <div class="container my-5" style="margin-inline:unset;">
+    <div class="row" id="price-row">
+      
+      {% for fiyat in fiyatlar %}
+        <div class="col-sm-4 mb-5">
+          <div class="card text-center shadow-lg">
+            <div class="title">
+              <i class="fa fa-paper-plane" aria-hidden="true"></i>
+              <h2>{{ fiyat.paket }} <br> {{ fiyat.ay }}</h2>
             </div>
+            <div class="price">
+              <h4>{{ fiyat.price }}₺ <br><p style="font-size: 3rem;">{{ fiyat.odeme_sekli }}</p></h4>
+            </div>
+            <div class="option">
+              <ul>
+                <li> <i class="fa fa-check" aria-hidden="true"></i> {{ fiyat.detail }} </li>
+              </ul>
+            </div>
+            {% comment %} <a href="#">Order Now </a> {% endcomment %}
           </div>
-          <!-- END Col one -->
-        {% endfor %}
-
         </div>
-      </div>
+        <!-- END Col one -->
+      {% endfor %}
+      
     </div>
-  </section>
+  </div>
+</section>
 {% endblock %}
