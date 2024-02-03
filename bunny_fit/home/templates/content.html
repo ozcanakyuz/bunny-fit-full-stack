@@ -22,37 +22,30 @@
           <p class="section-subtitle">HAKKIMIZDA</p>
           <h2 class="h2 section-title">Salonumuza Hoş Geldiniz..</h2>
           <p class="section-text">
-            Nam ut hendrerit leo. Aenean vel ipsum nunc. Curabitur in tellus vitae nisi aliquet dapibus non et erat.
-            Pellentesque
-            porta sapien non accumsan dignissim curabitur sagittis nulla sit amet dolor feugiat.
+            Bunny Fit olarak, en üst düzey fiziksel fitness eğitimi standartlarına odaklanıyoruz. 2021'den beri faaliyet gösteren ekibimiz, üyelerimizin hayatını zenginleştirmeye odaklanarak sağlıklı, güçlü ve hedefleri benzer insanlardan oluşan bir topluluk oluşturuyor. Vücudunuzu şekillendirmeyi hedefliyoruz ve sizleri bu yolculuğa davet ediyoruz.
+
+             Fitness sadece egzersiz yapmak değil, aynı zamanda bir destek sistemine sahip olmaktır. Bu nedenle, Bunny Fit olarak amacımız, sizlere sadece bir spor salonu değil, aynı zamanda kendinizi evinizde hissedeceğiniz bir ortam sunmaktır.
           </p>
-          <p class="section-text">
-            Integer placerat vitae metus posuere tincidunt. Nullam suscipit ante ac aliquet viverra vestibulum ante
-            ipsum primis.
-          </p>
-  
-          <div class="wrapper">
-  
-            <div class="about-coach">
-  
-              <figure class="coach-avatar">
-                <img src="{% static 'images/about-coach.jpg' %}" width="65" height="65" loading="lazy" alt="Trainer">
-              </figure>
-  
-              <div>
-                <h3 class="h3 coach-name">Denis Robinson</h3>
-  
-                <p class="coach-title">Our Coach</p>
-              </div>
-  
-            </div>
-  
-            <a href="#" class="btn btn-primary">Explore More</a>
-  
+          {% comment %} <p class="section-text">
+            Olanaklarımız şunları içerir: <br> <br>
+            
+            - Geniş, ferah ve konforlu bir deneyim sunma imkanı. <br>
+            - Çeşitli spor egzersizleri ve fitness hareketleri. <br>
+            - Otopark olanağı. <br>
+            - Her gün uzman ekiplerimiz tarafından steril edilen ve temizlenen kullanım alanları. <br>
+            - DJ performansı eşliğinde farklı bir antrenman deneyimi. <br>
+            - Buca'nın en iyi antrenörlerinden bilgi alma fırsatı. <br>
+            - Kayıt olan herkese +10.000 eğitici antrenman gifleri hediye! <br>
+            - Uygulamamızdan antrenman bilgisi ve ölçülerinizi sürekli kontrol etme imkanı. <br>
+            - Body Fit Shop supplement satış noktası. <br>
+            - Güler yüzlü ve profesyonel bir eğitim için doğru adrestesiniz. <br>
+            - Sürekli sıcak su ve duş imkanı. <br>
+            - Sahada devamlı bilgi alabileceğiniz antrenörlerimiz, bilgilerini sizinle paylaşmak için sizi bekliyor.
+          </p> {% endcomment %}
+          <div class="wrapper float-right">
+            <a href="#" class="btn btn-primary">OLANAKLARIMIZ</a>
           </div>
-  
         </div>
-  
       </div>
     </section>
   
@@ -94,11 +87,11 @@
                   <img src="{% static 'images/class-icon-1.png' %}" width="52" height="52" aria-hidden="true" alt=""
                     class="title-icon">
                   <h3 class="h3">
-                    <a href="#" class="card-title">Weight Lifting</a>
+                    <a href="#" class="card-title">Ağırlık Kaldırma</a>
                   </h3>
                 </div>
                 <p class="card-text">
-                  Suspendisse nisi libero, cursus ac magna sit amet, fermentum imperdiet nisi.
+                  Bu tür egzersizler, kas kütlesini artırır, metabolizmayı hızlandırır ve genel vücut sağlığını olumlu yönde etkiler.
                 </p>
                 <div class="card-progress">
                   <div class="progress-wrapper">
@@ -123,11 +116,11 @@
                   <img src="{% static 'images/class-icon-2.png' %}" width="52" height="52" aria-hidden="true" alt=""
                     class="title-icon">
                   <h3 class="h3">
-                    <a href="#" class="card-title">Cardio & Strenght</a>
+                    <a href="#" class="card-title">Cardio</a>
                   </h3>
                 </div>
                 <p class="card-text">
-                  Suspendisse nisi libero, cursus ac magna sit amet, fermentum imperdiet nisi.
+                  Genel dayanıklılığı artırır, kilo kontrolüne yardımcı olur, kalp sağlığını iyileştirir, enerji seviyelerini artırır ve stresi azaltır.
                 </p>
                 <div class="card-progress">
                   <div class="progress-wrapper">
@@ -141,7 +134,7 @@
               </div>
             </div>
           </li>
-          <li class="scrollbar-item">
+          {% comment %} <li class="scrollbar-item">
             <div class="class-card">
               <figure class="card-banner img-holder" style="--width: 416; --height: 240;">
                 <img src="{% static 'images/class-3.jpg' %}" width="416" height="240" loading="lazy" alt="Power Yoga"
@@ -177,52 +170,37 @@
               </div>
   
             </div>
-          </li>
-  
+          </li> {% endcomment %}
           <li class="scrollbar-item">
             <div class="class-card">
-  
               <figure class="card-banner img-holder" style="--width: 416; --height: 240;">
                 <img src="{% static 'images/class-4.jpg' %}" width="416" height="240" loading="lazy" alt="The Fitness Pack"
                   class="img-cover">
               </figure>
-  
               <div class="card-content">
-  
                 <div class="title-wrapper">
                   <img src="{% static 'images/class-icon-4.png' %}" width="52" height="52" aria-hidden="true" alt=""
                     class="title-icon">
-  
                   <h3 class="h3">
                     <a href="#" class="card-title">Fitness Paketi</a>
                   </h3>
                 </div>
-  
                 <p class="card-text">
-                  Suspendisse nisi libero, cursus ac magna sit amet, fermentum imperdiet nisi.
+                  Genellikle çeşitli egzersiz ekipmanları, antrenman programları ve beslenme önerilerini içeren kapsamlı paketlerdir.
                 </p>
-  
                 <div class="card-progress">
-  
                   <div class="progress-wrapper">
-                    <p class="progress-label">Class Full</p>
-  
+                    <p class="progress-label">Doluluk Oranı</p>
                     <span class="progress-value">88%</span>
                   </div>
-  
                   <div class="progress-bg">
                     <div class="progress-bar" style="width: 88%"></div>
                   </div>
-  
                 </div>
-  
               </div>
-  
             </div>
           </li>
-  
         </ul>
-  
       </div>
     </section>
   
@@ -341,7 +319,6 @@
           </li>
         {% endfor %}
       </ul>
-
     </div>
   </section>
     </article>

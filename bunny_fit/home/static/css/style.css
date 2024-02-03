@@ -870,6 +870,7 @@ body {
   padding: 13px;
   border-radius: 50%;
   transition: var(--transition-1);
+  font-size: x-large;
 }
 
 .social-link:is(:hover, :focus) { background-color: var(--coquelicot); }
