@@ -21,17 +21,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-2u^8polpzxc-33%*w-k^5y$#w72j_oj2^twd!-s0$_&nkg&hr^'
-SECRET_KEY = getenv("SECRET_KEY")
+SECRET_KEY = 'django-insecure-2u^8polpzxc-33%*w-k^5y$#w72j_oj2^twd!-s0$_&nkg&hr^'
+#! SECRET_KEY = getenv("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv("IS_DEVELOPMENT",True)
+DEBUG = True
+#! DEBUG = getenv("IS_DEVELOPMENT",True)
 
-ALLOWED_HOSTS = [
-    getenv("APP_HOST")
-]
+#! ALLOWED_HOSTS = [
+#!     getenv("APP_HOST")
+#! ]
 
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -128,11 +130,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'bunny_fit', 'static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+
+#! STATIC_ROOT = BASE_DIR / "staticfiles"
 
 #? upload
 MEDIA_URL = '/uploads/'
