@@ -1677,7 +1677,7 @@ body {
   position: relative;
   max-width: 300px;
   height: auto;
-  background: linear-gradient(-45deg,#fe0847,#feae3f);
+  /* background: linear-gradient(-45deg,#b95a72,#feae3f); */
   border-radius: 15px;
   margin: 0 auto;
   padding: 40px 20px;
@@ -1686,14 +1686,22 @@ body {
 -webkit-transition: .5s;
 transition: .5s;
 }
+
+.silver {
+  background: linear-gradient(-45deg,#b4b4b4,#969696);
+}
+
+.gold {
+  background: linear-gradient(-45deg,#f8f402,#b9b600);
+}
 .card:hover{
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
-.col-sm-4:nth-child(1) .card ,
+/* .col-sm-4:nth-child(1) .card ,
 .col-sm-4:nth-child(1) .card .title .fa{
   background: linear-gradient(-45deg,#fe0847,#feae3f);
-}
+} */
 /* .col-sm-4:nth-child(2) .card,
 .col-sm-4:nth-child(2) .card .title .fa{
   background: linear-gradient(-45deg,#ffec61,#f321d7);

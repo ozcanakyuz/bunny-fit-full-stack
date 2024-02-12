@@ -42,20 +42,20 @@
       
       {% for fiyat in fiyatlar %}
         <div class="col-sm-4 mb-5">
-          <div class="card text-center shadow-lg">
+          <div class="card text-center shadow-lg {% if forloop.counter <= 5 %}silver{% else %}gold{% endif %}">
             <div class="title">
-              <i class="fa fa-paper-plane" aria-hidden="true"></i>
-              <h2>{{ fiyat.paket }} <br> {{ fiyat.ay }}</h2>
+              <i class="fa-solid fa-dumbbell h3" aria-hidden="true"></i>
+              <h2>{{ fiyat.paket }} <br> <span style="color: black;">{{ fiyat.ay }}</span></h2>
             </div>
             <div class="price">
-              <h4>{{ fiyat.price }}₺ <br><p style="font-size: 3rem;">{{ fiyat.odeme_sekli }}</p></h4>
+              <h4>{{ fiyat.price }}₺ <br><p style="font-size: 3rem; color: red;">{{ fiyat.odeme_sekli }}</p></h4>
             </div>
             <div class="option">
               <ul>
-                <li> <i class="fa fa-check" aria-hidden="true"></i> {{ fiyat.detail }} </li>
+                <li style="color: black;"> <i class="fa fa-check" aria-hidden="true"></i> {{ fiyat.detail }} </li>
               </ul>
             </div>
-            {% comment %} <a href="#">Order Now </a> {% endcomment %}
+            <a href="#" class="btn-info">Sipariş Ver</a>
           </div>
         </div>
         <!-- END Col one -->
