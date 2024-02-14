@@ -7,14 +7,14 @@
 	<div class="form-containerlog sign-up-containerlog">
 		<form action="" method="POST">
 		{% csrf_token %}
-			<h1>Create Account</h1>
-			<div class="social-containerlog">
+			<h1>Kayıt Ol</h1>
+			{% comment %} <div class="social-containerlog">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your email for registration</span>
-			<div class="d-flex" style="gap: .1rem;">
+			</div> {% endcomment %}
+			{% comment %} <span>or use your email for registration</span> {% endcomment %}
+			<div class="d-flex" style="gap: 1rem;">
 				<input type="text" name="first_name" placeholder="Name"/>
 				<input type="text" name="last_name" placeholder="Surname"/>
 			</div>
@@ -22,7 +22,7 @@
 			<input type="email" name="email" placeholder="Email"/>
 			<input type="password" name="password" placeholder="Password"/>
 			<input type="password" name="password1" placeholder="Password Retry"/>
-			<button type="submit" name="signup_submit">Sign Up</button>
+			<button type="submit" name="signup_submit">Kayıt Ol</button>
 		</form>
 	</div>
 
@@ -30,31 +30,31 @@
 	<div class="form-containerlog sign-in-containerlog">
 		<form action"{% url 'index' %}" method="POST">
             {% csrf_token %}
-			<h1>Sign in</h1>
-			<div class="social-containerlog">
+			<h1>Giriş Yap</h1>
+			{% comment %} <div class="social-containerlog">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your account</span>
+			</div> {% endcomment %}
+			{% comment %} <span>or use your account</span> {% endcomment %}
 			<input type="text" name="username" placeholder="Username"/>
 			<input type="password" name="password" placeholder="Password"/>
-			<a href="" class="my-2">Forgot your password?</a>
-			<button type="submit" name="login_submit">Sign In</button>
+			<a href="" class="my-2">Şifremi unuttum</a>
+			<button type="submit" name="login_submit">Giriş yap</button>
 		</form>
 	</div>
 
 	<div class="overlay-containerlog">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" id="signIn">Sign In</button>
+				<h1>Hoşgeldiniz!</h1>
+				<p>Kişisel bilgilerinizi girerek giriş yapabilirsiniz.</p>
+				<button class="ghost" id="signIn">Giriş yap</button>
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
-				<button class="ghost" id="signUp">Sign Up</button>
+				<h1>Merhaba!</h1>
+				<p>Kişisel bilgilerinizi girin ve aramıza katılın.</p>
+				<button class="ghost" id="signUp">Kayıt Ol</button>
 			</div>
 		</div>
 	</div>
