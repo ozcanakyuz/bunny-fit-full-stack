@@ -12,7 +12,7 @@ class AntrenorImagesInline(admin.TabularInline):
     readonly_fields = ('image_tag',)
 class AntrenorAdmin(admin.ModelAdmin):
     # fields = ['name', 'status'] == 
-    list_display = ['name','keywords','detail','image_tag','status']
+    list_display = ['name','keywords','detail','instagram_kullanici_adi','image_tag','status']
     list_filter = ['status']
     readonly_fields = ('image_tag',) 
     inlines = [AntrenorImagesInline]

@@ -14,28 +14,30 @@
     <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
         <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
     </button>
+    
     {% with request.resolver_match.url_name as url_name %}
         <ul class="navbar-list">
+            <ul class="navbar-list">
+                <li>
+                    <a href="/" class="navbar-link {% if request.resolver_match.url_name == 'index' %} active {% endif %}" data-nav-link>Anasayfa</a>
+                </li>
+            </ul>
             <li>
-                <a href="/" class="navbar-link {% if url_name == 'index' %} active {% endif %}" data-nav-link>Anasayfa</a>
+                <a {% if request.resolver_match.url_name == 'index' %} href="#about" {% else %} href="/" {% endif %} class="navbar-link" data-nav-link>Hakkımızda</a>
             </li>
             <li>
-                <a href="#about" class="navbar-link {% if url_name == 'about' %} active {% endif %}" data-nav-link>Hakkımızda</a>
+                <a {% if request.resolver_match.url_name == 'index' %} href="#class" {% else %} href="/" {% endif %} class="navbar-link" data-nav-link>Dersler</a>
             </li>
             <li>
-                <a href="#class" class="navbar-link {% if url_name == 'class' %} active  {% endif %}" data-nav-link>Dersler</a>
+                <a href="/fiyatlar" class="navbar-link {% if request.resolver_match.url_name == 'fiyatlar_view' %} active {% endif %}" data-nav-link>Üyelik Paketleri</a>
             </li>
             <li>
-                <a href="/fiyatlar" class="navbar-link {% if url_name == 'class' %} active  {% endif %}" data-nav-link>Üyelik Paketleri</a>
+                <a {% if request.resolver_match.url_name == 'index' %} href="#blog" {% else %} href="/" {% endif %} class="navbar-link" data-nav-link>Antrenörler</a>
             </li>
             <li>
-                <a href="#blog" class="navbar-link {% if url_name == 'blog' %} active {% endif %}" data-nav-link>Antrenörler</a>
-            </li>
-            <li>
-                <a href="#contact" class="navbar-link {% if url_name == 'contact' %} active {% endif %}" data-nav-link>İletişim</a>
+                <a {% if request.resolver_match.url_name == 'index' %} href="#contact" {% else %} href="/" {% endif %} class="navbar-link" data-nav-link>İletişim</a>
             </li>
         </ul>
-        
     {% endwith %}
     </nav>
 
