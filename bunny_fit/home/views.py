@@ -59,7 +59,7 @@ def logout_view(request):
 
 # FIYATLAR
 def fiyatlar_view(request):
-    fiyatlar = Fiyatlar.objects.all()
+    fiyatlar = Fiyatlar.objects.filter(status=True)
     context = {'page': 'Üyelik Paketleri',
                'fiyatlar': fiyatlar,}
     return render(request, 'fiyatlar.html', context)

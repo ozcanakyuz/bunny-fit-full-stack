@@ -213,13 +213,21 @@
             <li class="scrollbar-item">
               <div class="class-card">
                 <figure class="card-banner img-holder" style="--width: 400px; --height: 400px;">
-                  <img src="{{ antrenor.image.url }}" id="antrenor-img" loading="lazy" alt="Trainer Images" class="img-cover">
+                  {% if antrenor.image %}
+                    <img src="{{ antrenor.image.url }}" id="antrenor-img" loading="lazy" alt="Trainer Images" class="img-cover">
+                  {% else %}
+                  <img id="antrenor-img" loading="lazy" alt="Trainer Images" class="img-cover">
+                  {% endif %}
               </figure>
                 <div class="card-content">
                   <div class="title-wrapper">
                     <img src="{% static 'images/class-icon-1.png' %}" width="52" height="52" aria-hidden="true" alt="" class="title-icon">
                     <h3 class="h3">
-                      <a href="https://www.instagram.com/{{ antrenor.instagram_kullanici_adi }}" target="_blank" class="card-title">{{ antrenor.name }}</a>
+                      {% if instagram_kullanici_adi %}
+                        <a href="https://www.instagram.com/{{antrenor.instagram_kullanici_adi}}" target="_blank" class="card-title">{{ antrenor.name }}</a>
+                      {% else %}
+                        <a href="#" target="_blank" class="card-title">{{ antrenor.name }}</a>
+                      {% endif %}
                       <p class="card-text">{{ antrenor.keywords }}</p>
                     </h3>
                   </div>

@@ -4,7 +4,7 @@
 {% block body %}
 
 <!--#HERO-->
-<section class="section hero bg-dark has-after has-bg-image" id="home" aria-label="hero" data-section
+<section class="section hero bg-dark has-after has-bg-image mb-5" id="home" aria-label="hero" data-section
   style="background-image: url('{% static 'images/hero-bg.png' %}'); height: 65vh;">
   <div class="container">
 
@@ -37,12 +37,12 @@
 
 {% comment %}! PRICE LIST  {% endcomment %}
 <section>
-  <div class="container my-5" style="margin-inline:unset;">
+  <div class="container my-5 m-auto" style="margin-inline:unset;">
     <div class="row" id="price-row">
       
       {% for fiyat in fiyatlar %}
         <div class="col-sm-4 mb-5">
-          <div class="card text-center shadow-lg {% if forloop.counter <= 5 %}silver{% else %}gold{% endif %}">
+          <div class="card text-center shadow-lg {% if forloop.counter <= 4 %} silver {% elif forloop.counter <= 8 %} gold {% elif forloop.counter <= 12 %} silver {% else %} gold {% endif %}">
             <div class="title">
               <i class="fa-solid fa-dumbbell h3" aria-hidden="true"></i>
               <h2>{{ fiyat.paket }} <br> <span style="color: black;">{{ fiyat.ay }}</span></h2>

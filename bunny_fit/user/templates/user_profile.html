@@ -37,33 +37,34 @@
 <table class="table table-bordered text-center rounded shadow-lg mt-5 w-25" id="user_profile" style="margin: auto;">
     <thead class="text-dark">
         <tr>
-            <th class="user_profile_responsive_600 bg-secondary" style="width:2rem;">Profile Photo</th>
+            <th class="user_profile_responsive_600 bg-secondary" style="width:2rem;padding-bottom:6rem;">Fotoğraf</th>
             {% if profile.image %}
             <td class="align-middle d-flex justify-content-center align-center"><img src="{{ profile.image.url }}" alt="profil" style="width: 100px;"></td>
             {% else %}
             <td class="align-middle d-flex justify-content-center align-center"><img src="" alt="NO PHOTO!" style="width: 100px;"></td>
             {% endif %}
         </tr>
-            <th class="user_profile_responsive_600 bg-secondary">Name</th>
+            <th class="user_profile_responsive_600 bg-secondary">İsim Soyisim</th>
             <td class="align-middle user_profile_responsive_600">{{ profile.user.get_full_name }}</td>
         </tr>
-            <th class="user_profile_responsive_600 bg-secondary">E Mail</th>
+            <th class="user_profile_responsive_600 bg-secondary">E-Mail</th>
             <td class="align-middle user_profile_responsive_600">{{ profile.user.email }}</td>
 
         </tr>
-            <th class="user_profile_responsive bg-secondary">Phone</th>
+            <th class="user_profile_responsive bg-secondary">Telefon</th>
             <td class="align-middle user_profile_responsive">{{ profile.phone }}</td>
 
         </tr>
-            <th class="user_profile_responsive bg-secondary">Address</th>
+            <th class="user_profile_responsive bg-secondary">Adres</th>
             <td class="align-middle user_profile_responsive">{{ profile.address }}</td>
 
         </tr>
-            <th class="user_profile_responsive bg-secondary">City</th>
-            <td class="align-middle user_profile_responsive">{{ profile }}</td>
+            <th class="user_profile_responsive bg-secondary">Şehir</th>
+            <td class="align-middle user_profile_responsive">{{ profile.city }}</td>
         </tr>
+        {% comment %}
         <th></th>
-        <td class="align-middle user_profile_responsive border-none"><h2>Vücut Ölçülerim</h2></td>
+         <td class="align-middle user_profile_responsive border-none"><h2>Vücut Ölçülerim</h2></td>
       </tr>
             <th class="user_profile_responsive bg-secondary">Boy</th>
             <td class="align-middle user_profile_responsive">{{ profile }}</td>
@@ -94,7 +95,7 @@
         </tr>
           <th class="user_profile_responsive bg-secondary">Sol Bacak</th>
           <td class="align-middle user_profile_responsive">{{ profile }}</td>
-        </tr>
+        </tr> {% endcomment %}
     </thead>
     {% comment %} <tbody class="align-middle d-flex justify-content-center">
         <tr>

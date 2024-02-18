@@ -334,10 +334,20 @@ body {
 \*-----------------------------------*/
 
 .logo img {
-  width: 5%;
+  width: 5% !important;
   position: absolute;
 }
-.header .btn { display: none; }
+
+@media (max-width: 520px) {
+  .logo img {
+    width: 10% !important;
+  }
+}
+@media (min-width: 1400px) {
+  .logo img {
+    width: 5% !important;
+  }
+}
 
 .header {
   background-color: var(--white);
@@ -997,7 +1007,7 @@ body {
    */
 
   .header .container {
-    max-width: unset;
+    /* max-width: unset; */
     padding-inline: 30px;
   }
 
@@ -1324,7 +1334,7 @@ body {
    */
 
   .container,
-  .header .container { max-width: 1140px; }
+  .header .container { max-width: 1240px; }
 
   .btn {
     padding: 18px 45px;
@@ -1557,7 +1567,7 @@ body {
 .overlay {
 	background: #FF416C;
 	background: -webkit-linear-gradient(to right, #44ff2b, #51ff41);
-	background: linear-gradient(to right, #ff922b, #ff4141);
+	background: linear-gradient(to right, #0011ff, #6f55ff);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -1643,7 +1653,8 @@ body {
 
 @media (max-width: 630px) {
   .containerlog {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    max-height: 400px !important;
   }
   #containerlog form {
     padding: 0 5px;
@@ -1793,9 +1804,8 @@ font-size: 16px;
 
 #price-row {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   position: relative;
-  left:20%
 }
 
 /* PRICE RESPONSIVE */
@@ -1803,9 +1813,8 @@ font-size: 16px;
 @media (max-width: 1669px) {
   #price-row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     position: relative;
-    left:20%
   }
 }
 @media (max-width: 1450px) {
@@ -1813,13 +1822,11 @@ font-size: 16px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     position: relative;
-    left:10%
   }
 }
 @media (max-width: 1240px) {
   #price-row {
     position: relative;
-    left:5%
   }
 }
 @media (max-width: 930px) {
@@ -1827,7 +1834,6 @@ font-size: 16px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     position: relative;
-    left:1%
   }
 }
 @media (max-width: 768px) {

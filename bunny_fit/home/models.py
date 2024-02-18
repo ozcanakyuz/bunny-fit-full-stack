@@ -63,7 +63,7 @@ class Antrenor(models.Model):
     keywords = models.CharField(max_length=255)
     image = models.ImageField(blank=True, upload_to='images/')
     detail = models.TextField()
-    instagram_kullanici_adi = models.CharField(max_length=150)
+    instagram_kullanici_adi = models.CharField(max_length=150, null=True)
     status = models.CharField(max_length=10,choices=STATUS)
     slug = models.SlugField()
     create_at = models.DateTimeField(auto_now_add=True)
@@ -73,9 +73,13 @@ class Antrenor(models.Model):
         return self.name
 
     def image_tag(self):
-        return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
+        if self.image:  # image alanı boş değilse
+            return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
+        else:
+            return "Fotoğraf yok"
     #! Admin tarafindaki 'image_tag' ifadesini kullanmak için alttaki kodu yazmak gerekiyor.
     image_tag.short_description = 'Image'
+
 
 class Images(models.Model):
     antrenor = models.ForeignKey(Antrenor, on_delete=models.CASCADE)
@@ -94,7 +98,7 @@ class Fiyatlar(models.Model):
     ODEME_SECENEKLERI = (('NAKIT', 'NAKIT'),('KREDI KARTI', 'KREDI KARTI'),)
     paket = models.CharField(max_length=150)
     ay = models.CharField(max_length=150)
-    price= models.FloatField()
+    price= models.CharField(max_length=150)
     odeme_sekli = models.CharField(max_length=20, choices=ODEME_SECENEKLERI)
     detail = models.TextField()
     status = models.CharField(max_length=10,choices=STATUS)
