@@ -223,7 +223,7 @@
                   <div class="title-wrapper">
                     <img src="{% static 'images/class-icon-1.png' %}" width="52" height="52" aria-hidden="true" alt="" class="title-icon">
                     <h3 class="h3">
-                      {% if instagram_kullanici_adi %}
+                      {% if antrenor.instagram_kullanici_adi %}
                         <a href="https://www.instagram.com/{{antrenor.instagram_kullanici_adi}}" target="_blank" class="card-title">{{ antrenor.name }}</a>
                       {% else %}
                         <a href="#" target="_blank" class="card-title">{{ antrenor.name }}</a>
